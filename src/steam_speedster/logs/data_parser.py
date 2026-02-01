@@ -45,4 +45,6 @@ def parse_status(lines: list[str], app_id: str):
             return "Downloading"
         elif ("AppID" in line) and ("changed" in line) and ("Fully Installed" in line) and (app_id in line):
             return "Downloaded"
+        elif ("AppID" in line) and ("changed" in line) and ("Uninstalled" in line) and (app_id in line):
+            return "Uninstalled"
     return "Downloading"
