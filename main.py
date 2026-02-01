@@ -26,7 +26,7 @@ def main():
             game_name = get_game_name(steam_path, app_id)
         else:
             game_name = "Unknown game"
-        print(f"Minute: {i}/5 | game: {game_name} | status: {status} | rate: {rate}")
+        print(f"Minute: {i + 1}/5 | game: {game_name} | status: {status} | rate: {rate}")
         time.sleep(60)
 
 

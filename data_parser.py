@@ -20,6 +20,10 @@ def parse_app_id(lines):
 
 def parse_status(lines):
     for line in reversed(lines):
-        if "AppID" in line and "state changed" in line and "Queued" in line:
+        if ("AppID" in line) and ("changed" in line) and ("Suspended" in line):
             return "Paused"
+        elif ("AppID" in line) and ("changed" in line) and ("Downloading" in line):
+            return "Downloading"
+        elif ("AppID" in line) and ("changed" in line) and ("Fully Installed" in line):
+            return "Downloaded"
     return "Downloading"
